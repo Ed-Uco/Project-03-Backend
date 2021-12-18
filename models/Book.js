@@ -56,7 +56,14 @@ const bookSchema = mongoose.Schema(
             required: true,
         },
         
-        userCreator:String,
+        userCreator: {
+            type: String,
+            required: true,
+        },
+        usereserver: {
+            type: [String],
+            required: true,
+        },
     },
     { timestamps: true },
 );
