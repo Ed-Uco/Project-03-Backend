@@ -65,7 +65,7 @@ exports.create = async (req, res) => {
 exports.login = async (req, res) => {
     //1. Obtener usuario, email y password del formulario (REQ)
     const { email, password } = req.body;
-    console.log({ email, password })
+   /*  console.log({ email, password }) */
     //2. Realizar el proceso asincrono
     try {
         //Encontrar un usuario este en base de datos
