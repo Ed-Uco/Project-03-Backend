@@ -144,3 +144,58 @@ exports.verifyToken = async (req, res) => {
         });
     }
 };
+//-------------------BORRAR-------------------
+exports.deleteUser = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deletedUser = await User.findByIdAndRemove({ _id: id });
+
+        res.json({
+            msg: 'Usuario borrado con éxito.',
+            data: deletedUser,
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error borrando el usuario.',
+            error: error,
+        });
+    }
+};
+
+//-------------------EDIT-------------------
+exports.editUser = async (req, res) => {
+    const { id } = req.params;
+
+    const {
+        nombre,
+        apellido,
+        email,
+        direccion,
+        admin,
+    } = req.body;
+
+    try {
+        const updateUser = await User.findByIdAndUpdate(
+            id,
+            {
+                nombre,
+                apellido,
+                email,
+                direccion,
+                admin,
+            },
+            { new: true },
+        );
+
+        res.json({
+            msg: 'Usuario actualizado con exito',
+            data: updateUser,
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'hubo un error obteniendo los datos.',
+            error: error,
+        });
+    }
+};

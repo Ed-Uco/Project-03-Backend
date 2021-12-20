@@ -12,6 +12,12 @@ router.post('/create', userController.create);
 // INICIAR SESIÓN DE USUARIO
 router.post('/login', userController.login);
 
+//Actualizar usuario
+router.put("/edituser/:id", userController.editUser)
+
+//Delete usuario
+router.delete("/deleteuser/:id", userController.deleteUser)
+
 //Verificacion de USUARIO
 router.get('/verifytoken', authorization, userController.verifyToken);
 
