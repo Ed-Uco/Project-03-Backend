@@ -13,11 +13,11 @@ const bookSchema = mongoose.Schema(
         },
         paginas: {
             type: Number,
-            required: true,
+
         },
         imagenc: {
             type: String,
-            required: true,
+
         },
         imageng: {
             type: String,
@@ -58,11 +58,10 @@ const bookSchema = mongoose.Schema(
         
         userCreator: {
             type: String,
-            required: true,
+
         },
         usereserver: {
             type: [String],
-            required: true,
         },
     },
     { timestamps: true },
