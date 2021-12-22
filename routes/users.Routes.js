@@ -16,7 +16,10 @@ router.post('/login', userController.login);
 router.put("/edituser/:id", userController.editUser)
 
 //Delete usuario
-router.delete("/deleteuser/:id", userController.deleteUser)
+/* router.delete("/deleteuser/:id", userController.deleteUser) */
+
+//Leer usuario
+router.get('/readoneuser/:id', userController.readOne);
 
 //Verificacion de USUARIO
 router.get('/verifytoken', authorization, userController.verifyToken);

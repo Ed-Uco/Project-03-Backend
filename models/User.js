@@ -17,16 +17,16 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        require: true,
+        default: '',
     },
     password: {
         type: String,
-        require: true,
+        default: '',
     },
     admin: {
         type: String,
-        require: true,
-    }
+        default: '',
+    },
 });
 
 // 3. MODELOS

@@ -163,6 +163,27 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
+
+exports.readOne = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const user = await User.findById(id);
+
+        res.json({
+            msg: 'Usuario obtenido con éxito.',
+            data: user,
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'hubo un error obteniendo los datos.',
+            error: error,
+        });
+    }
+};
+
+
+
 //-------------------EDIT-------------------
 exports.editUser = async (req, res) => {
     const { id } = req.params;
